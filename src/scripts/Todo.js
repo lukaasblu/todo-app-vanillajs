@@ -23,6 +23,8 @@ class Todo {
   constructor() {
     this.list = document.querySelector('.items-list');
     this.render();
+
+    document.querySelector('.btn-add').addEventListener('click', this.create.bind(this));
   }
 
   render() {
@@ -59,6 +61,23 @@ class Todo {
     this.li.appendChild(this.edit);
     this.li.appendChild(this.complete);
     this.li.appendChild(this.delete);
+  }
+
+  create() {
+    let todoTitle = document.querySelector('.add-input').value;
+
+    let newItem = {
+      id: Date.now().toString(),
+      title: todoTitle,
+      done: false,
+      date: new Date()
+    };
+
+    mockData.push(newItem);
+
+    document.querySelector('.add-input').value = '';
+
+    this.render();
   }
 }
 
