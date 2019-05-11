@@ -70,25 +70,31 @@ class Todo {
 
   createDomElements(id) {
     this.li = document.createElement('li');
-    this.edit = document.createElement('button');
-    this.delete = document.createElement('button');
-    this.complete = document.createElement('button');
+    this.span = document.createElement('span');
+    this.btnsDiv = document.createElement('div');
+    this.editBtn = document.createElement('button');
+    this.deleteBtn = document.createElement('button');
+    this.completeBtn = document.createElement('button');
 
-    this.edit.classList.add('btn-edit');
-    this.delete.classList.add('btn-delete');
-    this.complete.classList.add('btn-complete');
+    this.btnsDiv.classList.add('btns-div');
+    this.editBtn.classList.add('btn-edit');
+    this.deleteBtn.classList.add('btn-delete');
+    this.completeBtn.classList.add('btn-complete');
 
-    this.edit.setAttribute('data-id', id);
-    this.delete.setAttribute('data-id', id);
-    this.complete.setAttribute('data-id', id);
+    this.editBtn.setAttribute('data-id', id);
+    this.deleteBtn.setAttribute('data-id', id);
+    this.completeBtn.setAttribute('data-id', id);
 
-    this.edit.innerHTML = 'Edit';
-    this.delete.innerHTML = 'Delete';
-    this.complete.innerHTML = 'Complete';
+    this.editBtn.innerHTML = '<i class="fas fa-pen"></i>'
+    this.deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+    this.completeBtn.innerHTML = '<i class="fas fa-check"></i>';
 
-    this.li.appendChild(this.edit);
-    this.li.appendChild(this.complete);
-    this.li.appendChild(this.delete);
+    this.btnsDiv.appendChild(this.editBtn);
+    this.btnsDiv.appendChild(this.completeBtn);
+    this.btnsDiv.appendChild(this.deleteBtn);
+
+    this.li.appendChild(this.span);
+    this.li.appendChild(this.btnsDiv);
   }
 
   create() {
