@@ -1,2 +1,3 @@
-import Scripts from './scripts/scripts.js';
+import Todo from './scripts/Todo';
 
+let todo = new Todo();
