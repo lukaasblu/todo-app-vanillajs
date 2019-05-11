@@ -28,8 +28,12 @@ class Todo {
 
     document.querySelector('.btn-add').addEventListener('click', this.create.bind(this));
 
+    document.querySelector('.btn-update').addEventListener('click', this.update.bind(this));
+
     document.addEventListener('click', event => {
       if (event.target.classList.contains('btn-delete')) self.remove(event);
+
+      if (event.target.classList.contains('btn-edit')) self.renderEditForm(event);
     });
   }
 
@@ -43,6 +47,18 @@ class Todo {
       if (item.done) this.li.classList.add('done');
 
       this.list.appendChild(this.li);
+    });
+  }
+
+  renderEditForm(event) {
+    let id = event.target.getAttribute('data-id');
+
+    document.querySelector('.edit-popup').classList.remove('hide');
+    document.querySelector('.edit-popup').classList.add('show');
+    document.querySelector('.btn-update').setAttribute('data-id', id);
+
+    mockData.forEach(item => {
+      if (item.id === id) document.querySelector('.edit-input').value = item.title;
     });
   }
 
@@ -90,6 +106,22 @@ class Todo {
     let id = event.target.getAttribute('data-id');
 
     mockData = mockData.filter(item => item.id !== id);
+
+    this.render();
+  }
+
+  update(event) {
+    let id = event.target.getAttribute('data-id');
+    let updatedTitle = document.querySelector('.edit-input').value;
+
+    mockData = mockData.map(item => {
+      if (item.id === id) item.title = updatedTitle;
+
+      return item;
+    });
+
+    document.querySelector('.edit-popup').classList.remove('show');
+    document.querySelector('.edit-popup').classList.add('hide');
 
     this.render();
   }
