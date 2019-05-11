@@ -21,10 +21,16 @@ let mockData = [
 
 class Todo {
   constructor() {
+    let self = this;
+
     this.list = document.querySelector('.items-list');
     this.render();
 
     document.querySelector('.btn-add').addEventListener('click', this.create.bind(this));
+
+    document.addEventListener('click', event => {
+      if (event.target.classList.contains('btn-delete')) self.remove(event);
+    });
   }
 
   render() {
@@ -76,6 +82,14 @@ class Todo {
     mockData.push(newItem);
 
     document.querySelector('.add-input').value = '';
+
+    this.render();
+  }
+
+  remove(event) {
+    let id = event.target.getAttribute('data-id');
+
+    mockData = mockData.filter(item => item.id !== id);
 
     this.render();
   }
