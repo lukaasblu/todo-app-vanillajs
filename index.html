@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>TEST</title>
-    <link rel="stylesheet" href="dist/bundle.css" type="text/css" >
-</head>
-<body>
+    <link rel="stylesheet" href="dist/bundle.css" type="text/css" />
+  </head>
+  <body>
+    <div class="edit-popup">
+      <input type="text" class="edit-input">
+      <button class="btn-update">Update</button>
+    </div>
+    <div class="container">
+      <div class="sections">
+        <input type="text" class="add-input">
+        <button class="btn-add">Add</button>
+        <ul>
+          <li><a href="#">All</a></li>
+          <li><a href="#">Today</a></li>
+          <li><a href="#">Tomorrow</a></li>
+        </ul>
+      </div>
+      <div class="items-container">
+        <ul class="items-list"></ul>
+      </div>
+    </div>
     <script type="text/javascript" src="dist/bundle.js"></script>
-</body>
+  </body>
 </html>
