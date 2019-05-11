@@ -23,6 +23,8 @@ class Todo {
   constructor() {
     let self = this;
 
+    document.querySelector('.edit-popup').classList.add('hide');
+
     this.list = document.querySelector('.items-list');
     this.render();
 
