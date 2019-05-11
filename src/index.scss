@@ -1,2 +1,11 @@
-body {
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.done {
+  text-decoration: line-through;
 }

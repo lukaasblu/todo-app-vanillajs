@@ -34,6 +34,8 @@ class Todo {
       if (event.target.classList.contains('btn-delete')) self.remove(event);
 
       if (event.target.classList.contains('btn-edit')) self.renderEditForm(event);
+
+      if (event.target.classList.contains('btn-complete')) self.setTodoAsCompleted(event);
     });
   }
 
@@ -122,6 +124,18 @@ class Todo {
 
     document.querySelector('.edit-popup').classList.remove('show');
     document.querySelector('.edit-popup').classList.add('hide');
+
+    this.render();
+  }
+
+  setTodoAsCompleted(event) {
+    let id = event.target.getAttribute('data-id');
+
+    mockData = mockData.map(item => {
+      if (item.id === id) item.done = true;
+
+      return item;
+    });
 
     this.render();
   }
