@@ -1,3 +1,5 @@
+import { inputIsValid } from './utilities';
+
 let mockData = [
   {
     id: '1',
@@ -92,18 +94,20 @@ class Todo {
   create() {
     let todoTitle = document.querySelector('.add-input').value;
 
-    let newItem = {
-      id: Date.now().toString(),
-      title: todoTitle,
-      done: false,
-      date: new Date()
-    };
+    if (inputIsValid(todoTitle)) {
+      let newItem = {
+        id: Date.now().toString(),
+        title: todoTitle,
+        done: false,
+        date: new Date()
+      };
 
-    mockData.push(newItem);
+      mockData.push(newItem);
 
-    document.querySelector('.add-input').value = '';
+      document.querySelector('.add-input').value = '';
 
-    this.render();
+      this.render();
+    }
   }
 
   remove(event) {
@@ -118,16 +122,18 @@ class Todo {
     let id = event.target.getAttribute('data-id');
     let updatedTitle = document.querySelector('.edit-input').value;
 
-    mockData = mockData.map(item => {
-      if (item.id === id) item.title = updatedTitle;
+    if (inputIsValid(updatedTitle)) {
+      mockData = mockData.map(item => {
+        if (item.id === id) item.title = updatedTitle;
 
-      return item;
-    });
+        return item;
+      });
 
-    document.querySelector('.edit-popup').classList.remove('show');
-    document.querySelector('.edit-popup').classList.add('hide');
+      document.querySelector('.edit-popup').classList.remove('show');
+      document.querySelector('.edit-popup').classList.add('hide');
 
-    this.render();
+      this.render();
+    }
   }
 
   setTodoAsCompleted(event) {
