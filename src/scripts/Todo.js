@@ -39,7 +39,7 @@ class Todo {
 
       if (event.target.classList.contains('btn-edit')) self.renderEditForm(event);
 
-      if (event.target.classList.contains('btn-complete')) self.setTodoAsCompleted(event);
+      if (event.target.classList.contains('btn-complete')) self.toggleComplete(event);
     });
   }
 
@@ -136,11 +136,11 @@ class Todo {
     }
   }
 
-  setTodoAsCompleted(event) {
+  toggleComplete(event) {
     let id = event.target.getAttribute('data-id');
 
     mockData = mockData.map(item => {
-      if (item.id === id) item.done = true;
+      if (item.id === id) item.done = !item.done;
 
       return item;
     });
