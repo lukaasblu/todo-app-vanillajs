@@ -48,9 +48,12 @@ class Todo {
 
     mockData.forEach(item => {
       this.createDomElements(item.id);
-      this.li.insertAdjacentHTML('afterbegin', item.title);
+      this.li.firstChild.insertAdjacentHTML('afterbegin', item.title);
 
-      if (item.done) this.li.classList.add('done');
+      if (item.done) {
+        console.log('Li element:', this.li.firstChild);
+        this.li.firstChild.classList.add('done');
+      }
 
       this.list.appendChild(this.li);
     });
@@ -77,17 +80,13 @@ class Todo {
     this.completeBtn = document.createElement('button');
 
     this.btnsDiv.classList.add('btns-div');
-    this.editBtn.classList.add('btn-edit');
-    this.deleteBtn.classList.add('btn-delete');
-    this.completeBtn.classList.add('btn-complete');
+    this.editBtn.className = 'btn-edit fas fa-pen';
+    this.deleteBtn.className = 'btn-delete fas fa-trash-alt';
+    this.completeBtn.className = 'btn-complete fas fa-check';
 
     this.editBtn.setAttribute('data-id', id);
     this.deleteBtn.setAttribute('data-id', id);
     this.completeBtn.setAttribute('data-id', id);
-
-    this.editBtn.innerHTML = '<i class="fas fa-pen"></i>'
-    this.deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
-    this.completeBtn.innerHTML = '<i class="fas fa-check"></i>';
 
     this.btnsDiv.appendChild(this.editBtn);
     this.btnsDiv.appendChild(this.completeBtn);

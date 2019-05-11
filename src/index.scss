@@ -101,23 +101,23 @@ button {
   transition: transform 100ms linear;
 }
 
-button[class="btn-edit"]:hover,
-button[class="btn-complete"]:hover,
-button[class="btn-delete"]:hover {
+button[class~="btn-edit"]:hover,
+button[class~="btn-complete"]:hover,
+button[class~="btn-delete"]:hover {
   cursor: pointer;
   -webkit-transform: scale($actionBtnScaleFactor);
   transform: scale($actionBtnScaleFactor);
 }
 
-button[class="btn-edit"]:hover {
+button[class~="btn-edit"]:hover {
   color: #f4c20d;
 }
 
-button[class="btn-complete"]:hover {
+button[class~="btn-complete"]:hover {
   color: #3cba54;
 }
 
-button[class="btn-delete"]:hover {
+button[class~="btn-delete"]:hover {
   color: #db3236;
 }
 
