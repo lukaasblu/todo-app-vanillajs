@@ -25,7 +25,7 @@ class Todo {
   constructor() {
     let self = this;
 
-    document.querySelector('.edit-popup').classList.add('hide');
+    document.querySelector('.edit-popup').className += ' hide';
 
     this.list = document.querySelector('.items-list');
     this.render();
@@ -51,7 +51,6 @@ class Todo {
       this.li.firstChild.insertAdjacentHTML('afterbegin', item.title);
 
       if (item.done) {
-        console.log('Li element:', this.li.firstChild);
         this.li.firstChild.classList.add('done');
       }
 
