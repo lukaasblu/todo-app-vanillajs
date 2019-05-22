@@ -78,7 +78,7 @@ class Todo {
     this.deleteBtn = document.createElement('button');
     this.completeBtn = document.createElement('button');
 
-    this.btnsDiv.classList.add('btns-div');
+    this.btnsDiv.classList.add('btns-container');
     this.editBtn.className = 'btn-edit fas fa-pen';
     this.deleteBtn.className = 'btn-delete fas fa-trash-alt';
     this.completeBtn.className = 'btn-complete fas fa-check';
@@ -91,14 +91,20 @@ class Todo {
     this.btnsDiv.appendChild(this.completeBtn);
     this.btnsDiv.appendChild(this.deleteBtn);
 
-    this.span.className = 'li-span';
+    // this.li.appendChild(this.span);
+    // this.li.appendChild(this.btnsDiv);
+
+    /* Flip completed todo */
+    this.span.className = 'item-title';
+    this.li.className = 'item';
 
     this.frontDiv = document.createElement('div');
     this.backDiv = document.createElement('div');
     this.innerDiv = document.createElement('div');
-    this.frontDiv.className = 'li-div-front';
-    this.backDiv.className = 'li-div-back';
-    this.innerDiv.className = 'li-div-inner';
+
+    this.frontDiv.className = 'item-front';
+    this.backDiv.className = 'item-back';
+    this.innerDiv.className = 'item-inner';
 
     this.frontDiv.appendChild(this.span);
     this.frontDiv.appendChild(this.btnsDiv);
@@ -107,10 +113,7 @@ class Todo {
     this.innerDiv.appendChild(this.backDiv);
 
     this.li.appendChild(this.innerDiv);
-    this.li.className = 'li-todo-item';
-
-    // this.li.appendChild(this.span);
-    // this.li.appendChild(this.btnsDiv);
+    /* End flip completed todo */
   }
 
   create() {
