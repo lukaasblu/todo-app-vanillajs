@@ -1,15 +1,8 @@
-// Flip completed todo
 $actionBtnScaleFactor: 1.5;
 
 .item {
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flex-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 7px;
+  background-color: red;
+  padding: 70px;
   margin: 7px 0px;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -20,6 +13,22 @@ $actionBtnScaleFactor: 1.5;
 
 .item:hover {
   box-shadow: 3px 5px 7px #ded8d8;
+}
+
+.item-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.item-front {
+  width: 100%;
+  height: 100%;
+
+  display: -webkit-box;
+  display: -ms-flex-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btns-container {
@@ -34,14 +43,12 @@ $actionBtnScaleFactor: 1.5;
 }
 
 @media (min-width: 767.98px) {
-  .item {
+  .item-front {
     flex-direction: column;
     align-items: flex-start;
-    height: 100px;
-    width: 29%;
   }
 
-  .btns-div {
+  .btns-container {
     align-self: flex-end;
   }
 }
