@@ -91,8 +91,26 @@ class Todo {
     this.btnsDiv.appendChild(this.completeBtn);
     this.btnsDiv.appendChild(this.deleteBtn);
 
-    this.li.appendChild(this.span);
-    this.li.appendChild(this.btnsDiv);
+    this.span.className = 'li-span';
+
+    this.frontDiv = document.createElement('div');
+    this.backDiv = document.createElement('div');
+    this.innerDiv = document.createElement('div');
+    this.frontDiv.className = 'li-div-front';
+    this.backDiv.className = 'li-div-back';
+    this.innerDiv.className = 'li-div-inner';
+
+    this.frontDiv.appendChild(this.span);
+    this.frontDiv.appendChild(this.btnsDiv);
+
+    this.innerDiv.appendChild(this.frontDiv);
+    this.innerDiv.appendChild(this.backDiv);
+
+    this.li.appendChild(this.innerDiv);
+    this.li.className = 'li-todo-item';
+
+    // this.li.appendChild(this.span);
+    // this.li.appendChild(this.btnsDiv);
   }
 
   create() {

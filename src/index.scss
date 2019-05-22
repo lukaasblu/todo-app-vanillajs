@@ -93,7 +93,7 @@ h1 {
       flex-direction: column;
       align-items: flex-start;
       height: 100px;
-      width: 30%;
+      width: 29%;
     }
   }
 
@@ -175,4 +175,48 @@ button[class~="btn-delete"]:hover {
 .btn-add:hover, .btn-update:hover {
   cursor: pointer;
   transform: scale(1.3);
+}
+
+.li-div-front {
+  // border: 3px solid purple;
+}
+
+.li-div-back {
+  // border: 3px solid red;
+}
+
+.li-div-inner {
+  // background-color: blue;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: ccenter;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.li-todo-item {
+  perspective: 1000px;
+}
+
+.li-todo-item:hover .li-div-inner {
+  transform: rotateY(180deg);
+}
+
+.li-div-front, .li-div-back, .li-span{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+// .li-div-front {
+//   background-color: #bbb;
+//   color: black;
+// }
+
+.li-div-back {
+  // background-color: dodgerblue;
+  // color: white;
+  // transform: rotateY(180deg);
 }
