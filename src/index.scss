@@ -210,7 +210,7 @@ button[class~="btn-delete"]:hover {
 }
 
 .item-back {
-  background-color: dodgerblue;
+  background-color: #222222;
   color: white;
   transform: rotateY(180deg);
 }
@@ -218,3 +218,10 @@ button[class~="btn-delete"]:hover {
 .done {
   transform: rotateY(180deg);
 }
+
+// Flip completed todo with JS
+
+// .item-inner {
+//   transition: all 1s ease-in-out;
+//   transform-style: preserve-3d;
+// }

@@ -1,4 +1,4 @@
-import { inputIsValid } from './utilities';
+import { inputIsValid, getElementsByAttribute } from './utilities';
 
 let mockData = [
   {
@@ -52,6 +52,7 @@ class Todo {
 
       if (item.done) {
         this.li.firstChild.classList.add('done');
+        // this.li.classList.add('done');
       }
 
       this.list.appendChild(this.li);
@@ -113,6 +114,8 @@ class Todo {
     this.innerDiv.appendChild(this.backDiv);
 
     this.li.appendChild(this.innerDiv);
+
+    this.li.setAttribute('data-id', id);
     /* End flip completed todo */
   }
 
@@ -164,13 +167,23 @@ class Todo {
   toggleComplete(event) {
     let id = event.target.getAttribute('data-id');
 
-    mockData = mockData.map(item => {
-      if (item.id === id) item.done = !item.done;
+    // mockData = mockData.map(item => {
+    //   if (item.id === id) item.done = !item.done;
 
-      return item;
-    });
+    //   return item;
+    // });
 
-    this.render();
+    let element;
+    for (let i = 0; i < mockData.length; i++) {
+      if (mockData[i].id === id) {
+        mockData[i].id = id;
+        element = getElementsByAttribute(document, 'li', 'data-id', id);
+        element[0].classList.toggle('done');
+        console.log('Completed todo', element);
+      }
+    }
+
+    // this.render();
   }
 }
 
