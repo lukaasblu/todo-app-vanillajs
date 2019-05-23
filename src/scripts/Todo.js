@@ -51,7 +51,7 @@ class Todo {
       this.li.firstChild.firstChild.firstChild.insertAdjacentHTML('afterbegin', item.title);
 
       if (item.done) {
-        this.li.firstChild.firstChild.firstChild.classList.add('done');
+        this.li.firstChild.classList.add('done');
       }
 
       this.list.appendChild(this.li);
