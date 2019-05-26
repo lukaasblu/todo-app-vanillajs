@@ -52,7 +52,6 @@ class Todo {
 
       if (item.done) {
         this.li.firstChild.classList.add('done');
-        // this.li.classList.add('done');
       }
 
       this.list.appendChild(this.li);
@@ -91,9 +90,6 @@ class Todo {
     this.btnsDiv.appendChild(this.editBtn);
     this.btnsDiv.appendChild(this.completeBtn);
     this.btnsDiv.appendChild(this.deleteBtn);
-
-    // this.li.appendChild(this.span);
-    // this.li.appendChild(this.btnsDiv);
 
     /* Flip completed todo */
     this.span.className = 'item-title';
@@ -167,23 +163,15 @@ class Todo {
   toggleComplete(event) {
     let id = event.target.getAttribute('data-id');
 
-    // mockData = mockData.map(item => {
-    //   if (item.id === id) item.done = !item.done;
-
-    //   return item;
-    // });
-
-    let element;
-    for (let i = 0; i < mockData.length; i++) {
-      if (mockData[i].id === id) {
-        mockData[i].id = id;
-        element = getElementsByAttribute(document, 'li', 'data-id', id);
-        element[0].classList.toggle('done');
-        console.log('Completed todo', element);
+    mockData = mockData.map(item => {
+      if (item.id === id) {
+        item.done = !item.done;
+        let element = getElementsByAttribute(document, 'li', 'data-id', id);
+        element[0].firstChild.classList.toggle('done');
       }
-    }
 
-    // this.render();
+      return item;
+    });
   }
 }
 
