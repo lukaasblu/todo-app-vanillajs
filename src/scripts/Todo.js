@@ -49,6 +49,8 @@ class Todo {
     mockData.forEach(item => {
       this.createDomElements(item.id);
       this.li.firstChild.firstChild.firstChild.insertAdjacentHTML('afterbegin', item.title);
+      this.li.firstChild.childNodes[1].firstChild.insertAdjacentHTML('afterbegin', item.title);
+      // console.log(this.li.firstChild.childNodes[1].childNodes);
 
       if (item.done) {
         this.li.firstChild.classList.add('done');
@@ -81,7 +83,7 @@ class Todo {
     this.btnsDiv.classList.add('btns-container');
     this.editBtn.className = 'btn-edit fas fa-pen';
     this.deleteBtn.className = 'btn-delete fas fa-trash-alt';
-    this.completeBtn.className = 'btn-complete fas fa-check';
+    this.completeBtn.className = 'btn-complete btn-turn-to-back fas fa-check';
 
     this.editBtn.setAttribute('data-id', id);
     this.deleteBtn.setAttribute('data-id', id);
@@ -105,6 +107,8 @@ class Todo {
 
     this.frontDiv.appendChild(this.span);
     this.frontDiv.appendChild(this.btnsDiv);
+
+    this.backDiv.innerHTML = `<span class="item-title-back"></span><div class="btns-container-back"><button data-id="${id}" class="btn-complete btn-turn-to-front fas fa-undo"></button></div>`;
 
     this.innerDiv.appendChild(this.frontDiv);
     this.innerDiv.appendChild(this.backDiv);
