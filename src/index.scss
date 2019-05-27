@@ -177,6 +177,16 @@ $actionBtnScaleFactor: 1.5;
   .btns-container {
     align-self: flex-end;
   }
+
+  .item-back {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .btns-container-back {
+    align-self: flex-end;
+  }
 }
 
 button {
