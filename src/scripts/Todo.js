@@ -41,6 +41,25 @@ class Todo {
 
       if (event.target.classList.contains('btn-complete')) self.toggleComplete(event);
     });
+
+    // Add item when enter key is pressed and the add input has the focus
+    document.querySelector('.add-input').addEventListener('keyup', function(event) {
+      // Number 13 is the "Enter" key on the keyboard
+      if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.querySelector('.btn-add').click();
+      }
+    });
+
+    // Update item when enter key is pressed and the edit input has the focus
+    document.querySelector('.edit-input').addEventListener('keyup', function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.querySelector('.btn-update').click();
+      }
+    });
   }
 
   render() {
