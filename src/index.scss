@@ -109,6 +109,7 @@ input {
 $actionBtnScaleFactor: 1.5;
 
 .item-title {
+  text-align: left;
   padding: 7px;
   overflow-wrap: break-word;
   max-height: 50%;
@@ -186,7 +187,7 @@ $actionBtnScaleFactor: 1.5;
 
 @media (min-width: 767.98px) {
   .item {
-    height: 100px;
+    height: 110px;
     min-width: 28%;
     max-width: 29%;
   }
@@ -285,4 +286,21 @@ button[class~="btn-delete"]:hover {
   font-size: 30px;
   font-weight: bold;
   color: #707070;
+}
+
+.item-date {
+  font-family: Arial;
+  font-size: 17px;
+  // font-style: italic;
+  font-weight: 100;
+  background-color: #F0F0F0;
+  // background-color: transparent;
+  // color: #707070;
+  // display: flex;
+  // justify-content: flex-end;
+  // align-self: flex-end;
+  padding: 1px;
+  margin: 0px 7px;
+  // // border: 1px solid #707070;
+  border-radius: 3px;
 }

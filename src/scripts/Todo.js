@@ -17,7 +17,7 @@ let mockData = [
     id: '3',
     title: 'Learn more about GraphQL',
     done: false,
-    date: new Date()
+    date: new Date(2019, 5, 6)
   }
 ];
 
@@ -71,6 +71,7 @@ class Todo {
       mockData.forEach(item => {
         this.createDomElements(item.id);
         this.li.firstChild.firstChild.firstChild.insertAdjacentHTML('afterbegin', item.title);
+        this.li.firstChild.firstChild.childNodes[1].insertAdjacentHTML('afterbegin', item.date.toDateString());
         this.li.firstChild.childNodes[1].firstChild.insertAdjacentHTML('afterbegin', item.title);
 
         if (item.done) {
@@ -115,6 +116,9 @@ class Todo {
     this.btnsDiv.appendChild(this.completeBtn);
     this.btnsDiv.appendChild(this.deleteBtn);
 
+    this.dateDiv = document.createElement('div');
+    this.dateDiv.className = 'item-date';
+
     /* Flip completed todo */
     this.span.className = 'item-title';
     this.li.className = 'item';
@@ -128,6 +132,7 @@ class Todo {
     this.innerDiv.className = 'item-inner';
 
     this.frontDiv.appendChild(this.span);
+    this.frontDiv.appendChild(this.dateDiv);
     this.frontDiv.appendChild(this.btnsDiv);
 
     this.backDiv.innerHTML = `<span class="item-title-back"></span><div class="btns-container-back"><button data-id="${id}" class="btn-complete btn-turn-to-front fas fa-undo"></button><button data-id="${id}" class="btn-delete btn-complete-back fas fa-trash-alt"></button></div>`;
