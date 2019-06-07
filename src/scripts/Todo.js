@@ -3,19 +3,19 @@ import { inputIsValid, getElementsByAttribute } from './utilities';
 let mockData = [
   {
     id: '1',
-    title: 'Complete the Todo app',
+    title: 'Buy groceries for tonight\'s dinner',
     done: false,
     date: new Date()
   },
   {
     id: '2',
-    title: 'Cook dinner',
+    title: 'Complete the Todo app',
     done: true,
     date: new Date()
   },
   {
     id: '3',
-    title: 'Go to the gym',
+    title: 'Learn more about GraphQL',
     done: false,
     date: new Date()
   }
