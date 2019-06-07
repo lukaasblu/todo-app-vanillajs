@@ -130,7 +130,7 @@ class Todo {
     this.frontDiv.appendChild(this.span);
     this.frontDiv.appendChild(this.btnsDiv);
 
-    this.backDiv.innerHTML = `<span class="item-title-back"></span><div class="btns-container-back"><button data-id="${id}" class="btn-complete btn-turn-to-front fas fa-undo"></button></div>`;
+    this.backDiv.innerHTML = `<span class="item-title-back"></span><div class="btns-container-back"><button data-id="${id}" class="btn-complete btn-turn-to-front fas fa-undo"></button><button data-id="${id}" class="btn-delete btn-complete-back fas fa-trash-alt"></button></div>`;
 
     this.innerDiv.appendChild(this.frontDiv);
     this.innerDiv.appendChild(this.backDiv);

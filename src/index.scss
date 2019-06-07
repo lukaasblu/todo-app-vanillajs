@@ -259,7 +259,7 @@ button[class~="btn-delete"]:hover {
   transform: rotateX(-180deg);
 }
 
-.btn-turn-to-front {
+.btn-turn-to-front, .btn-complete-back {
   background-color: transparent;
   color: white;
 }
