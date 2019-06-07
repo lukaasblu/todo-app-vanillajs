@@ -65,18 +65,21 @@ class Todo {
   render() {
     this.list.innerHTML = '';
 
-    mockData.forEach(item => {
-      this.createDomElements(item.id);
-      this.li.firstChild.firstChild.firstChild.insertAdjacentHTML('afterbegin', item.title);
-      this.li.firstChild.childNodes[1].firstChild.insertAdjacentHTML('afterbegin', item.title);
-      // console.log(this.li.firstChild.childNodes[1].childNodes);
+    if (mockData.length === 0) {
+      this.list.innerHTML = `<span id="no-todos-text">Wow, such empty</span>`;
+    } else {
+      mockData.forEach(item => {
+        this.createDomElements(item.id);
+        this.li.firstChild.firstChild.firstChild.insertAdjacentHTML('afterbegin', item.title);
+        this.li.firstChild.childNodes[1].firstChild.insertAdjacentHTML('afterbegin', item.title);
 
-      if (item.done) {
-        this.li.firstChild.classList.add('done');
-      }
+        if (item.done) {
+          this.li.firstChild.classList.add('done');
+        }
 
-      this.list.appendChild(this.li);
-    });
+        this.list.appendChild(this.li);
+      });
+    }
   }
 
   renderEditForm(event) {
