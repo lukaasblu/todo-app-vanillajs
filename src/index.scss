@@ -110,6 +110,8 @@ $actionBtnScaleFactor: 1.5;
 
 .item-title {
   padding: 7px;
+  overflow-wrap: break-word;
+  max-height: 50%;
 }
 
 .item {
@@ -170,7 +172,8 @@ $actionBtnScaleFactor: 1.5;
 @media (min-width: 767.98px) {
   .item {
     height: 100px;
-    width: 28%;
+    min-width: 28%;
+    max-width: 29%;
   }
 
   .item-front {
