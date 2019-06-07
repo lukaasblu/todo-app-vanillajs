@@ -167,6 +167,21 @@ $actionBtnScaleFactor: 1.5;
     justify-content: space-between;
     align-items: center;
   }
+
+  .item-title, .item-title-back, .edit-input, .add-input {
+    font-size: 2.5vw;
+  }
+
+  .edit-input, .add-input {
+    height: 30px;
+  }
+
+  button[class~="btn-edit"],
+  button[class~="btn-complete"],
+  button[class~="btn-turn-to-back"],
+  button[class~="btn-delete"] {
+    font-size: 2.5vw;
+  }
 }
 
 @media (min-width: 767.98px) {
