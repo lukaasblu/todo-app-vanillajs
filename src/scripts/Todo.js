@@ -15,7 +15,7 @@ let mockData = [
   },
   {
     id: '3',
-    title: 'Learn more about GraphQL',
+    title: 'Study GraphQL',
     done: false,
     date: new Date()
   }
