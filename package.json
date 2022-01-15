@@ -28,7 +28,7 @@
     "node-sass": "^4.12.0",
     "ora": "^0.3.0",
     "sass-loader": "^4.0.2",
-    "shelljs": "^0.7.5",
+    "shelljs": "^0.8.5",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
